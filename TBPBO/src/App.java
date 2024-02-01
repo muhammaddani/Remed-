@@ -193,7 +193,7 @@ public class App {
 
     private static void saveToDatabase(Penjualan penjualan) { //jdbc
         try (Connection connection = DriverManager.getConnection(url, dbuser, dbpassword)) { //jdbc koneksi
-            String query = "INSERT INTO transaksi (nama_pelanggan, no_hp, alamat, berat) VALUES (?, ?, ?, ?)"; 
+            String query = "INSERT INTO transaksi (nama_pelanggan, no_hp, alamat, berat) VALUES (?, ?, ?, ?)"; //create
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 preparedStatement.setString(1, penjualan.getNamaPelanggan()); 
                 preparedStatement.setString(2, penjualan.getNoHp());          
